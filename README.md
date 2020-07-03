@@ -26,42 +26,54 @@ For a starting point it is recommended to add the following code snippet to your
 ```json
     "editor.tokenColorCustomizations":{
         "textMateRules": [
-        {
-            "scope": "storage.type.amd-gcn-isa",
-            "settings": {
-                "foreground": "#CC3333"
+            {
+                "scope": "constant.string.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#a76c00"
+                }
+            },
+            {
+                "scope": "storage.type.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#CC3333"
+                }
+            },
+            {
+                "scope": "keyword.vector.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#33CCCC"
+                }
+            },
+            {
+                "scope": "keyword.scalar.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#CC33CC"
+                }
+            },
+            {
+                "scope": "support.variable.vector.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#CCCC33"
+                }
+            },
+            {
+                "scope": "support.variable.scalar.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#6495ED"
+                }
+            },
+            {
+                "scope": "keyword.control.label.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#33CC33"
+                }
+            },
+            {
+                "scope": "keyword.clrx.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#999999"
+                }
             }
-        },
-        {
-            "scope": "keyword.vector.amd-gcn-isa",
-            "settings": {
-                "foreground": "#33CCCC"
-            }
-        },
-        {
-            "scope": "keyword.scalar.amd-gcn-isa",
-            "settings": {
-                "foreground": "#CC33CC"
-            }
-        },
-        {
-            "scope": "support.variable.vector.amd-gcn-isa",
-            "settings": {
-                "foreground": "#CCCC33"
-            }
-        },
-        {
-            "scope": "support.variable.scalar.amd-gcn-isa",
-            "settings": {
-                "foreground": "#6495ED"
-            }
-        },
-        {
-            "scope": "keyword.control.label.amd-gcn-isa",
-            "settings": {
-                "foreground": "#33CC33"
-            }
-        }
         ]
     }
 ```
