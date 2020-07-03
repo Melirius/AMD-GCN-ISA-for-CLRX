@@ -36,5 +36,10 @@
 				"path": "./syntaxes/isa.tmLanguage"
 			}
 		]
+	},
+	"__metadata": {
+		"id": "21102b25-f68e-400c-ba2d-b8389bf73cc8",
+		"publisherDisplayName": "Ivan Siutsou",
+		"publisherId": "5ff7a766-f8ee-4b43-904a-e84d8d6abc5b"
 	}
 }

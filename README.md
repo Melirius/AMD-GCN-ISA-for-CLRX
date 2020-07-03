@@ -21,7 +21,7 @@ the following tokens are emitted:
 - `constant.numeric.float.amd-gcn-isa`
 - `constant.numeric.integer.amd-gcn-isa`
 
-For a starting point it is recommended to add the following code snippet to your theme (on Windows it is in %APPDATA%\Roaming\Code\User\settings.json file):
+For a starting point it is recommended to add the following code snippet to your theme (on Windows it is in %APPDATA%\Code\User\settings.json file):
 
 ```json
     "editor.tokenColorCustomizations":{
