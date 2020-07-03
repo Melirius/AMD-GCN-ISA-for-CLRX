@@ -1,0 +1,11 @@
+{
+    "iconDefinitions": {
+        "_GCN_file": {
+			"fontCharacter": "GCN",
+            //"iconPath": "./images/Folder_16x_inverse.svg"
+        }
+    },
+	 "languageIds": {
+        "amd-gcn-isa": "_GCN_file"
+    }
+}

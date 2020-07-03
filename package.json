@@ -1,0 +1,40 @@
+{
+	"name": "amd-gcn-isa-clrx",
+	"displayName": "AMD GCN ISA",
+	"description": "Language support for AMD GCN instruction set architecture.",
+	"version": "1.0.1",
+	"publisher": "IvanSiutsou",
+	"repository": "https://github.com/Melirius/AMD-GCN-ISA-for-CLRX",
+	"engines": {
+		"vscode": "^1.13.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "amd-gcn-isa",
+				"aliases": [
+					"AMD GCN ISA",
+					"isa"
+				],
+				"extensions": [
+					".isa",
+					".il",
+					".isa.txt",
+					".il.txt",
+					".gcn"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "amd-gcn-isa",
+				"scopeName": "source.isa",
+				"path": "./syntaxes/isa.tmLanguage"
+			}
+		]
+	}
+}
