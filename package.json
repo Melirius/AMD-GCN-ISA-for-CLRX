@@ -2,14 +2,14 @@
 	"name": "amd-gcn-isa-clrx",
 	"displayName": "AMD GCN ISA",
 	"description": "Language support for AMD GCN instruction set architecture.",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "IvanSiutsou",
 	"repository": "https://github.com/Melirius/AMD-GCN-ISA-for-CLRX",
 	"engines": {
 		"vscode": "^1.13.0"
 	},
 	"categories": [
-		"Languages"
+		"Programming Languages"
 	],
 	"contributes": {
 		"languages": [

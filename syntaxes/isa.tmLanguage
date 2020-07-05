@@ -26,7 +26,25 @@
                 <key>end</key>
                 <string>\*/</string>
                 <key>name</key>
-                <string>comment.block</string>
+                <string>comment.block.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>//.*\n|#.*\n</string>
+                <key>name</key>
+                <string>comment.line.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b[0-9]+\.[0-9]+\b</string>
+                <key>name</key>
+                <string>constant.numeric.float.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(0x[a-zA-Z0-9]+)|([0-9]+)\b</string>
+                <key>name</key>
+                <string>constant.numeric.integer.amd-gcn-isa</string>
             </dict>
             <dict>
                 <key>begin</key>
@@ -38,76 +56,58 @@
             </dict>
             <dict>
                 <key>match</key>
-                <string>\b((ds|buffer|flat|global|scratch|image|tbuffer|s_buffer_load|s_load|s_store|s_dcache|sample|v_interp)_[a-zA-Z0-9_]+|s_waitcnt|s_memtime)\b</string>
-                <key>name</key>
-                <string>storage.type.amd-gcn-isa</string>
-            </dict>               
-            <dict>
-                <key>match</key>
-                <string>\b(v_cmp[a-zA-Z0-9_]+|v_movrel[a-zA-Z0-9_]+)\b</string>
-                <key>name</key>
-                <string>keyword.control.vector.amd-gcn-isa</string>
-            </dict>  
-            <dict>
-                <key>match</key>
-                <string>\b(s_cmp[a-zA-Z0-9_]+|s_bitcmp[a-zA-Z0-9_]+|s_barrier|s_endpgm|s_nop|s_trap|s_rfe|s_setprio|s_sleep|s_sendmsg|s_branch|s_cbranch[a-zA-Z0-9_]+|s_setpc|s_getpc|s_swappc|s_setvskip|s_cselect_b[0-9]+|s_cmov[a-zA-Z0-9_]+|s_movrel[a-zA-Z0-9_]+|s_[a-zA-Z]+_saveexec_b64)\b</string>
-                <key>name</key>
-                <string>keyword.control.scalar.amd-gcn-isa</string>
-            </dict>  
-            <dict>
-                <key>match</key>
-                <string>\b(v_[a-zA-Z0-9_]+)\b</string>
-                <key>name</key>
-                <string>keyword.vector.amd-gcn-isa</string>
-            </dict>  
-            <dict>
-                <key>match</key>
-                <string>\b(s_[a-zA-Z0-9_]+)\b</string>
-                <key>name</key>
-                <string>keyword.scalar.amd-gcn-isa</string>
-            </dict>   
-            <dict>
-                <key>match</key>
-                <string>\b(label_[a-zA-Z0-9]+)\b|\.[a-zA-Z][a-zA-Z0-9_]+:|[a-zA-Z0-9_]+\s*=\s*</string>
-                <key>name</key>
-                <string>keyword.control.label.amd-gcn-isa</string>
-            </dict>
-            <dict>
-                <key>match</key>
-                <string>(\.32bit|\.64bit|\.abort|\.acl_version|\.align|\.altmacro|\.amd|\.amdcl2|\.arch|\.arch_minor|\.arch_stepping|\.arg|\.args|\.ascii|\.asciz|\.balign|\.balignl|\.balignw|\.boolconsts|\.bssdata|\.buggyfplit|\.byte|\.call_convention|\.calnote|\.cbid|\.cbmask|\.cf_call|\.cf_cjump|\.cf_end|\.cf_jump|\.cf_ret|\.cf_start|\.codeversion|\.compile_options|\.condout|\.config|\.constantbuffers|\.control_directive|\.cws|\.data|\.debug_private_segment_buffer_sgpr|\.debug_wavefront_private_segment_offset_sgpr|\.debugmode|\.default_hsa_features|\.dims|\.double|\.driver_info|\.driver_version|\.dx10clamp|\.earlyexit|\.eflags|\.else|\.elseif|\.elseif32|\.elseif64|\.elseifarch|\.elseifb|\.elseifc|\.elseifdef|\.elseifeq|\.elseifeqs|\.elseiffmt|\.elseifge|\.elseifgpu|\.elseifgt|\.elseifle|\.elseiflt|\.elseifnarch|\.elseifnb|\.elseifnc|\.elseifndef|\.elseifne|\.elseifnes|\.elseifnfmt|\.elseifngpu|\.elseifnotdef|\.endif|\.endm|\.endmacro|\.endr|\.endrept|\.ends|\.endscope|\.end|\.entry|\.enum|\.equ|\.equiv|\.eqv|\.err|\.error|\.exceptions|\.exitm|\.extern|\.fail|\.file|\.fill|\.fillq|\.fixed_work_group_size|\.fkernel|\.float|\.floatconsts|\.floatmode|\.for|\.format|\.gallium|\.gds_segment_size|\.gdssize|\.get_driver_version|\.get_llvm_version|\.get_arch|\.get_64bit|\.get_format|\.get_gpu|\.get_policy|\.global|\.globalbuffers|\.globaldata|\.globl|\.gotsym|\.gpu|\.group_segment_align|\.half|\.header|\.hsa_debugmode|\.hsa_dims|\.hsa_dx10clamp|\.hsa_exceptions|\.hsa_floatmode|\.hsa_ieeemode|\.hsa_localsize|\.hsa_pgmrsrc1|\.hsa_pgmrsrc2|\.hsa_priority|\.hsa_privmode|\.hsa_scratchbuffer|\.hsa_sgprsnum|\.hsa_tgsize|\.hsa_userdatanum|\.hsa_vgprsnum|\.hsaconfig|\.hsalayout|\.hwlocal|\.hword|\.hwregion|\.include|\.incbin|\.ieeemode|\.if|\.if32|\.if64|\.ifarch|\.ifb|\.ifc|\.ifdef|\.ifeq|\.ifeqs|\.iffmt|\.ifge|\.ifgpu|\.ifgt|\.ifle|\.iflt|\.ifnarch|\.ifnb|\.ifnc|\.ifndef|\.ifne|\.ifnes|\.ifnfmt|\.ifngpu|\.ifnotdef|\.inner|\.inputs|\.inputsamplers|\.int|\.intconsts|\.irp|\.irpc|\.isametadata|\.kcode|\.kcodeend|\.kernarg_segment_align|\.kernarg_segment_size|\.kernel|\.kernel_code_entry_offset|\.kernel_code_prefetch_offset|\.kernel_code_prefetch_size|\.lflags|\.line|\.llvm_version|\.ln|\.local|\.localsize|\.long|\.machine|\.macro|\.macrocase|\.main|\.max_flat_work_group_size|\.max_scratch_backing_memory|\.md_group_segment_fixed_size|\.md_kernarg_segment_align|\.md_kernarg_segment_size|\.md_language|\.md_private_segment_fixed_size|\.md_sgprsnum|\.md_symname|\.md_version|\.md_vgprsnum|\.md_wavefront_size|\.metadata|\.newbinfmt|\.noaltmacro|\.nobuggyfplit|\.nomacrocase|\.nosectdiffs|\.octa|\.offset|\.org|\.outputs|\.p2align|\.persistentbuffers|\.pgmrsrc1|\.pgmrsrc2|\.policy|\.print|\.printfid|\.priority|\.private_elem_size|\.private_segment_align|\.privateid|\.privmode|\.proginfo|\.purgem|\.quad|\.rawcode|\.regvar|\.rept|\.reqd_work_group_size|\.reserved_sgprs|\.reserved_vgprs|\.rocm|\.rodata|\.runtime_handle|\.runtime_loader_kernel_symbol|\.rvlin|\.rvlin_once|\.rwdata|\.sampler|\.samplerinit|\.samplerreloc|\.sbttl|\.scope|\.scratchbuffer|\.scratchbuffers|\.scratchsym|\.section|\.segment|\.set|\.setup|\.setupargs|\.sgprsnum|\.short|\.single|\.size|\.skip|\.space|\.spilledsgprs|\.spilledvgprs|\.string|\.string16|\.string32|\.string64|\.struct|\.stub|\.subconstantbuffers|\.target|\.text|\.tgsize|\.title|\.tripple|\.uav|\.uavid|\.uavmailboxsize|\.uavopmask|\.uavprivate|\.undef|\.unusing|\.use_debug_enabled|\.use_dispatch_id|\.use_dispatch_ptr|\.use_dynamic_call_stack|\.use_flat_scratch_init|\.use_grid_workgroup_count|\.use_kernarg_segment_ptr|\.use_ordered_append_gds|\.use_private_segment_buffer|\.use_private_segment_size|\.use_ptr64|\.use_queue_ptr|\.use_xnack_enabled|\.useargs|\.useconstdata|\.useenqueue|\.usegeneric|\.useprintf|\.userdata|\.userdatanum|\.usereg|\.usesetup|\.using|\.vectypehint|\.version|\.vgprsnum|\.warning|\.wavefront_sgpr_count|\.wavefront_size|\.weak|\.while|\.word|\.work_group_size_hint|\.workgroup_fbarrier_count|\.workgroup_group_segment_size|\.workitem_private_segment_size|\.workitem_vgpr_count)\b</string>
+                <string>\b(\.32bit|\.64bit|\.abort|\.acl_version|\.align|\.altmacro|\.amd|\.amdcl2|\.arch|\.arch_minor|\.arch_stepping|\.arg|\.args|\.ascii|\.asciz|\.balign|\.balignl|\.balignw|\.boolconsts|\.bssdata|\.buggyfplit|\.byte|\.call_convention|\.calnote|\.cbid|\.cbmask|\.cf_call|\.cf_cjump|\.cf_end|\.cf_jump|\.cf_ret|\.cf_start|\.codeversion|\.compile_options|\.condout|\.config|\.constantbuffers|\.control_directive|\.cws|\.data|\.debug_private_segment_buffer_sgpr|\.debug_wavefront_private_segment_offset_sgpr|\.debugmode|\.default_hsa_features|\.dims|\.double|\.driver_info|\.driver_version|\.dx10clamp|\.earlyexit|\.eflags|\.else|\.elseif|\.elseif32|\.elseif64|\.elseifarch|\.elseifb|\.elseifc|\.elseifdef|\.elseifeq|\.elseifeqs|\.elseiffmt|\.elseifge|\.elseifgpu|\.elseifgt|\.elseifle|\.elseiflt|\.elseifnarch|\.elseifnb|\.elseifnc|\.elseifndef|\.elseifne|\.elseifnes|\.elseifnfmt|\.elseifngpu|\.elseifnotdef|\.endif|\.endm|\.endmacro|\.endr|\.endrept|\.ends|\.endscope|\.end|\.entry|\.enum|\.equ|\.equiv|\.eqv|\.err|\.error|\.exceptions|\.exitm|\.extern|\.fail|\.file|\.fill|\.fillq|\.fixed_work_group_size|\.fkernel|\.float|\.floatconsts|\.floatmode|\.for|\.format|\.gallium|\.gds_segment_size|\.gdssize|\.get_driver_version|\.get_llvm_version|\.get_arch|\.get_64bit|\.get_format|\.get_gpu|\.get_policy|\.global|\.globalbuffers|\.globaldata|\.globl|\.gotsym|\.gpu|\.group_segment_align|\.half|\.header|\.hsa_debugmode|\.hsa_dims|\.hsa_dx10clamp|\.hsa_exceptions|\.hsa_floatmode|\.hsa_ieeemode|\.hsa_localsize|\.hsa_pgmrsrc1|\.hsa_pgmrsrc2|\.hsa_priority|\.hsa_privmode|\.hsa_scratchbuffer|\.hsa_sgprsnum|\.hsa_tgsize|\.hsa_userdatanum|\.hsa_vgprsnum|\.hsaconfig|\.hsalayout|\.hwlocal|\.hword|\.hwregion|\.include|\.incbin|\.ieeemode|\.if|\.if32|\.if64|\.ifarch|\.ifb|\.ifc|\.ifdef|\.ifeq|\.ifeqs|\.iffmt|\.ifge|\.ifgpu|\.ifgt|\.ifle|\.iflt|\.ifnarch|\.ifnb|\.ifnc|\.ifndef|\.ifne|\.ifnes|\.ifnfmt|\.ifngpu|\.ifnotdef|\.inner|\.inputs|\.inputsamplers|\.int|\.intconsts|\.irp|\.irpc|\.isametadata|\.kcode|\.kcodeend|\.kernarg_segment_align|\.kernarg_segment_size|\.kernel|\.kernel_code_entry_offset|\.kernel_code_prefetch_offset|\.kernel_code_prefetch_size|\.lflags|\.line|\.llvm_version|\.ln|\.local|\.localsize|\.long|\.machine|\.macro|\.macrocase|\.main|\.max_flat_work_group_size|\.max_scratch_backing_memory|\.md_group_segment_fixed_size|\.md_kernarg_segment_align|\.md_kernarg_segment_size|\.md_language|\.md_private_segment_fixed_size|\.md_sgprsnum|\.md_symname|\.md_version|\.md_vgprsnum|\.md_wavefront_size|\.metadata|\.newbinfmt|\.noaltmacro|\.nobuggyfplit|\.nomacrocase|\.nosectdiffs|\.octa|\.offset|\.org|\.outputs|\.p2align|\.persistentbuffers|\.pgmrsrc1|\.pgmrsrc2|\.policy|\.print|\.printfid|\.priority|\.private_elem_size|\.private_segment_align|\.privateid|\.privmode|\.proginfo|\.purgem|\.quad|\.rawcode|\.regvar|\.rept|\.reqd_work_group_size|\.reserved_sgprs|\.reserved_vgprs|\.rocm|\.rodata|\.runtime_handle|\.runtime_loader_kernel_symbol|\.rvlin|\.rvlin_once|\.rwdata|\.sampler|\.samplerinit|\.samplerreloc|\.sbttl|\.scope|\.scratchbuffer|\.scratchbuffers|\.scratchsym|\.section|\.segment|\.set|\.setup|\.setupargs|\.sgprsnum|\.short|\.single|\.size|\.skip|\.space|\.spilledsgprs|\.spilledvgprs|\.string|\.string16|\.string32|\.string64|\.struct|\.stub|\.subconstantbuffers|\.target|\.text|\.tgsize|\.title|\.tripple|\.uav|\.uavid|\.uavmailboxsize|\.uavopmask|\.uavprivate|\.undef|\.unusing|\.use_debug_enabled|\.use_dispatch_id|\.use_dispatch_ptr|\.use_dynamic_call_stack|\.use_flat_scratch_init|\.use_grid_workgroup_count|\.use_kernarg_segment_ptr|\.use_ordered_append_gds|\.use_private_segment_buffer|\.use_private_segment_size|\.use_ptr64|\.use_queue_ptr|\.use_xnack_enabled|\.useargs|\.useconstdata|\.useenqueue|\.usegeneric|\.useprintf|\.userdata|\.userdatanum|\.usereg|\.usesetup|\.using|\.vectypehint|\.version|\.vgprsnum|\.warning|\.wavefront_sgpr_count|\.wavefront_size|\.weak|\.while|\.word|\.work_group_size_hint|\.workgroup_fbarrier_count|\.workgroup_group_segment_size|\.workitem_private_segment_size|\.workitem_vgpr_count)\b</string>
                 <key>name</key>
                 <string>keyword.clrx.amd-gcn-isa</string>
             </dict>
             <dict>
                 <key>match</key>
-                <string>\b(v[0-9.]+)\b|v\[[0-9]+:[0-9]+\]</string>
+                <string>\b(label_[a-zA-Z0-9]+)\b|\.[a-zA-Z][a-zA-Z0-9_]+|[a-zA-Z0-9_]+\s*=\s*</string>
                 <key>name</key>
-                <string>support.variable.vector.amd-gcn-isa</string>
+                <string>keyword.control.label.amd-gcn-isa</string>
             </dict>
             <dict>
                 <key>match</key>
-                <string>\b(s[0-9]+|vcc|exec[_lohi]*|m0)\b|s\[[0-9]+:[0-9]+\]</string>
+                <string>\b(s_cmp[a-zA-Z0-9_]+|s_bitcmp[a-zA-Z0-9_]+|s_barrier|s_endpgm|s_nop|s_trap|s_rfe|s_setprio|s_sleep|s_sendmsg|s_branch|s_cbranch[a-zA-Z0-9_]+|s_setpc|s_getpc|s_swappc|s_setvskip|s_cselect_b[0-9]+|s_cmov[a-zA-Z0-9_]+|s_movrel[a-zA-Z0-9_]+|s_[a-zA-Z]+_saveexec_b64)\b|\b(s_[a-zA-Z0-9_]+)\s*exec</string>
+                <key>name</key>
+                <string>keyword.control.scalar.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(v_cmp[a-zA-Z0-9_]+|v_movrel[a-zA-Z0-9_]+|v_cndmask[a-zA-Z0-9_]+|v_(read|write)lane[a-zA-Z0-9_]+)\b</string>
+                <key>name</key>
+                <string>keyword.control.vector.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b((ds|buffer|flat|global|scratch|image|tbuffer|s_buffer_load|s_load|s_store|s_dcache|sample|v_interp)_[a-zA-Z0-9_]+|s_waitcnt|s_memtime)\b</string>
+                <key>name</key>
+                <string>storage.type.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(s_[a-zA-Z0-9_]+)\b</string>
+                <key>name</key>
+                <string>keyword.scalar.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(v_[a-zA-Z0-9_]+)\b</string>
+                <key>name</key>
+                <string>keyword.vector.amd-gcn-isa</string>
+            </dict>
+            <dict>
+                <key>match</key>
+                <string>\b(s[0-9]+|vcc|exec[_lohi]*|m0)\b|(s\[[0-9]+:[0-9]+\])|lgkmcnt</string>
                 <key>name</key>
                 <string>support.variable.scalar.amd-gcn-isa</string>
             </dict>
             <dict>
                 <key>match</key>
-                <string>//.*\n|#.*\n</string>
+                <string>\b(v[0-9.]+)\b|(v\[[0-9]+:[0-9]+\])|vmcnt|expcnt</string>
                 <key>name</key>
-                <string>comment.line.double-slash.amd-gcn-isa</string>
-            </dict>      
-            <dict>
-                <key>match</key>
-                <string>\b[0-9]+\.[0-9]+\b</string>
-                <key>name</key>
-                <string>constant.numeric.float.amd-gcn-isa</string>
-            </dict>   
-            <dict>
-                <key>match</key>
-                <string>\b(0x[a-zA-Z0-9]+)|([0-9]+)\b</string>
-                <key>name</key>
-                <string>constant.numeric.integer.amd-gcn-isa</string>
-            </dict>                        
+                <string>support.variable.vector.amd-gcn-isa</string>
+            </dict>
         </array>
     </dict>
 </plist>

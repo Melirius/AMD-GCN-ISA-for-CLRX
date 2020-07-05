@@ -11,15 +11,20 @@ For files with the extensions
 - .il.txt
 
 the following tokens are emitted:
-- `storage.type.amd-gcn-isa`
-- `keyword.vector.amd-gcn-isa`
-- `keyword.scalar.amd-gcn-isa`
-- `keyword.control.label.amd-gcn-isa`
-- `support.variable.vector.amd-gcn-isa`
-- `support.variable.scalar.amd-gcn-isa`
-- `comment.line.double-slash.amd-gcn-isa`
+- `comment.block.amd-gcn-isa`
+- `comment.line.amd-gcn-isa`
 - `constant.numeric.float.amd-gcn-isa`
 - `constant.numeric.integer.amd-gcn-isa`
+- `constant.string.amd-gcn-isa`
+- `keyword.clrx.amd-gcn-isa`
+- `keyword.control.label.amd-gcn-isa`
+- `keyword.control.vector.amd-gcn-isa`
+- `keyword.control.scalar.amd-gcn-isa`
+- `keyword.vector.amd-gcn-isa`
+- `keyword.scalar.amd-gcn-isa`
+- `storage.type.amd-gcn-isa`
+- `support.variable.vector.amd-gcn-isa`
+- `support.variable.scalar.amd-gcn-isa`
 
 For a starting point it is recommended to add the following code snippet to your theme (on Windows it is in %APPDATA%\Code\User\settings.json file):
 
@@ -33,9 +38,21 @@ For a starting point it is recommended to add the following code snippet to your
                 }
             },
             {
-                "scope": "storage.type.amd-gcn-isa",
+                "scope": "keyword.clrx.amd-gcn-isa",
                 "settings": {
-                    "foreground": "#CC3333"
+                    "foreground": "#999999"
+                }
+            },
+            {
+                "scope": "keyword.control.label.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#33CC33"
+                }
+            },
+            {
+                "scope": "keyword.scalar.amd-gcn-isa",
+                "settings": {
+                    "foreground": "#CC33CC"
                 }
             },
             {
@@ -45,9 +62,9 @@ For a starting point it is recommended to add the following code snippet to your
                 }
             },
             {
-                "scope": "keyword.scalar.amd-gcn-isa",
+                "scope": "storage.type.amd-gcn-isa",
                 "settings": {
-                    "foreground": "#CC33CC"
+                    "foreground": "#CC3333"
                 }
             },
             {
@@ -61,18 +78,6 @@ For a starting point it is recommended to add the following code snippet to your
                 "settings": {
                     "foreground": "#6495ED"
                 }
-            },
-            {
-                "scope": "keyword.control.label.amd-gcn-isa",
-                "settings": {
-                    "foreground": "#33CC33"
-                }
-            },
-            {
-                "scope": "keyword.clrx.amd-gcn-isa",
-                "settings": {
-                    "foreground": "#999999"
-                }
             }
         ]
     }
@@ -84,6 +89,8 @@ For a starting point it is recommended to add the following code snippet to your
 Initial [release](https://marketplace.visualstudio.com/items?itemName=dbaumeis.amd-gcn-isa) by Dominik Baumeister.
 ### 1.0.1
 Extension to different types of commands and comments by Ivan Siutsou basing partly on the [highlighting schemes of CLRadeonExtender](https://github.com/CLRX/CLRX-mirror/tree/master/editors).
+### 1.0.2
+Some improvments in highlighting and documentation.
 
 ## License
 
