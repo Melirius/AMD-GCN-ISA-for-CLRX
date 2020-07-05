@@ -90,7 +90,7 @@ Initial [release](https://marketplace.visualstudio.com/items?itemName=dbaumeis.a
 ### 1.0.1
 Extension to different types of commands and comments by Ivan Siutsou basing partly on the [highlighting schemes of CLRadeonExtender](https://github.com/CLRX/CLRX-mirror/tree/master/editors).
 ### 1.0.2
-Some improvments in highlighting and documentation.
+Some improvements in highlighting and documentation.
 
 ## License
 
