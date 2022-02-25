@@ -9,6 +9,7 @@ For files with the extensions
 - .isa.txt
 - .il
 - .il.txt
+- .gcn
 
 the following tokens are emitted:
 - `comment.block.amd-gcn-isa`
